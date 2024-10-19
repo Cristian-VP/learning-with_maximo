@@ -13,7 +13,7 @@ Internet. Cada niño que se inscribe tiene un número de puntos en función de a
 
             Declarar método 
             truthMachine(string)
-            Si string = 1 Entonces
+            Si string  Entonces
                 devolver true 
             Sino
                 devolver false
