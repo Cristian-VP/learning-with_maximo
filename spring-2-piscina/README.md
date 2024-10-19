@@ -36,11 +36,11 @@ ___
         volumeChangedPoolB := calcVolume  
 
     Mostrar en terminal  
-        TaskAreaPools 
-        TaskVolumePools
-        TaskValuesBothPools
-        TaskAreaBothPools
-        TaskVolumeBothPools
-        TaskValuesChangedPools
+        taskAreaPools 
+        taskVolumePools
+        taskValuesBothPools
+        taskAreaBothPools
+        taskVolumeBothPools
+        taskValuesChangedPools
 
     Fin algoritmo piscina

@@ -1,6 +1,6 @@
 # Sprint 3 → Parte 2
 
-### Algoritmo inscripción alumno
+## Algoritmo inscripción alumno
 
 La escuela de educación primaria de nuestro barrio abre ahora el plazo de inscripción. Tienen muchos datos en
 registrar para cada niño que se inscribe y quieren automatizar la recogida de datos para que no les
@@ -78,3 +78,71 @@ Internet. Cada niño que se inscribe tiene un número de puntos en función de a
                 Escribir "Gracias por responder a las preguntas. Tu puntuación obtenida es: enrolledStudentScore"
        
              Fin algoritmo
+
+## Sring 3 - Parte 1 
+
+### Ampliar algoritmo spring 2 - piscina
+
+Modificar el programa que se realizó en le Spring 2, añadiendo tipo de datos y entrada des de teclado.
+Las modificaciones tendrán unas especificaciones. Los cambios incluyen tres partes: a. Modificación del programa, b. Añadir "trazos," 
+c. Utilizar debugger del IDE. 
+
+___
+
+    Inicio algoritmo piscina
+
+    Declarar método calcArea(float width, float large)
+        Devuelve cálculo de área
+    Declarar método calcVolume(float area, float deep)
+        Devuelve cálculo de volumen
+
+    Declarar y asignar
+        cons
+            largePols := float 300
+        fcons
+        var
+            widthInput, deepInput, widthPoolA, widthPoolB, deepPoolA, deepPoolB : float
+            resultAreaPools, resultVolumePool, resultValuesBothPools, resultAreaBothPools , resultVolumeBothPools,  resultValuesChangedPools: String
+        fvar
+    
+    Solicitar datos usuario
+        Escribir"El programa te solicitara el ancho y profundo de las piscinas. Solo admite decimales"
+    
+        Escribir "Introduce el ancho de la piscina A"
+        Leer widthInput
+        Asignar widthPoolA := widthInput
+        
+        Escribir "Introduce el ancho de la piscina B"
+        Leer widthInput
+        Asignar widtPoolB := widthInput
+        
+        Escribir "Introduce la profundidad de la piscina A"
+        Leer deepInput 
+        Asignar deepPoolA := deepInput
+        
+        Escribir "Introduce la profundidad de la piscina B"
+        Leer deepInput
+        Asignar deepPoolB := deepInput
+
+    Asignación valores: area, volumen, dimensiones de las piscinas y sus variantes
+        areaPoolA := calcArea 
+        areaPoolB :=  calcArea
+        volumePoolA := calVolume
+        volumePoolB := calcVolume
+        widthBothPools := widthPoolA + widthPoolB
+        areaBothPools := calcArea
+        volumeBothPools := volumePoolA + volumePoolB
+        volumeChangedPoolA := calcVolume
+        volumeChangedPoolB := calcVolume  
+
+
+    Mostrar en terminal  
+        resultAreaPools := String "El área total de la piscina A es:  m², y de la piscina B es:  m².\n"
+        resultVolumePools := String "El volumen total de la piscina A es:  m³, y de la piscina B es:  m³.\n"
+        resultValuesBothPools := String "El ancho de las piscinas juntas es:  m, y el largo es:  m.\n"
+        resultAreaBothPools := String "El valor del área de las dos piscinas juntas es:  m².\n"
+        resultVolumeBothPools := String "El valor del volumen de las dos piscinas juntas es  m³.\n"
+        resultValuesChangedPools := String "Los nuevos valores son: Piscina A tiene un ancho de  m, largo m y volumen  m³,  
+        piscina B tiene un ancho  m, largo  m y volumen  m³."
+
+    Fin algoritmo piscina
