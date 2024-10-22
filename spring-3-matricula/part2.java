@@ -46,27 +46,21 @@ public class part2 {
         enrolledStudentScore = 0;
         if(brotherStudent){
             enrolledStudentScore += brothersInCenter;
-            System.out.println(enrolledStudentScore);
         }
         if(homeStudent){
             enrolledStudentScore += proximityHome;
-            System.out.println(enrolledStudentScore);
         }
         if(parentsWorksStudent){
             enrolledStudentScore += proximityParentWorks;
-            System.out.println(enrolledStudentScore);
         }
         if(conditionStudent){
             enrolledStudentScore += studentCondition;
-            System.out.println(enrolledStudentScore);
         }
         if(familyStudent){
             enrolledStudentScore += typeFamily;
-            System.out.println(enrolledStudentScore);
         }
         if(schooledFamilyStudent){
             enrolledStudentScore += familySchooled;
-            System.out.println(enrolledStudentScore);
         }
 
         //Mostrar en el terminal la puntuación obtenida
