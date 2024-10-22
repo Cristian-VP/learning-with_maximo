@@ -11,18 +11,19 @@ Internet. Cada niño que se inscribe tiene un número de puntos en función de a
 
         Inicio algoritmo innscripción alumno
 
-            Declarar método 
+            //Declarar método 
             truthMachine(string)
             Si string  Entonces
                 devolver true 
             Sino
                 devolver false
 
-            Declarar variables y constantes
+            //Declarar variables y constantes
             
             var
-                registerStudentNumber, enrolledStudentScore : int 
-                brothers, homeLocation, parentsWorks, conditioner, membersFamily, scholedFamily : String
+                random : Random
+                scanner : Scanner
+                registerStudentNumber, enrolledStudentScore : int
                 brotherStudent, homeStudent, parentsWorksStudent, conditionStudent, familyStudent, schooledFamilyStudent : boolean
             fvar
             
@@ -37,26 +38,26 @@ Internet. Cada niño que se inscribe tiene un número de puntos en función de a
 
             Preguntar datos del usuario, por cada respuesta asignar valor
                 Escribir "Para poder asignarte una valoración en tu matricula. Debes responder a las siguiente preguntas.
-                . Responde unicamente sí o no."
+                 Responde unicamente sí o no."
                 Escribir "¿Tienes uno o más hermanos/as/es en el centro?"
-                    Leer brothers
+                    Leer scanner
                     Asignar brotherStudent  :=  truthMachine(brothers)
                 Escribir "¿Tu residencia esta en la misma localidad que el centro?"
-                    Leer homeLocation
+                    Leer scanner
                     Asignar homeStudent  := truthMachine(homeLocation)
                 Escribir "¿Tus padres trabajan en la misma localidad?"
-                    Leer parentsWorks
+                    Leer scanner
                     Asignar parentsWorksStudent  := truthMachine(parentsWorks)
                 Escribir "Te encuentras en alguna de estas dos situaciones: 
                             - Grado discapacidad mayor o igual 33%
                             - Enfermedad crónica "
-                    Leer conditioner
+                    Leer 
                     Asignar conditionStudent  := truthMachine(conditioner)
                 Escribir "¿Tienes padres o hermanos?"
-                    Leer membersFamily
+                    Leer scanner
                     Asignar familyStudent  := truthMachine(membersFamily)
                 Escribir "¿Algun miembro de tu familia a estudiado en el centro?"
-                    Leer scholedFamily
+                    Leer scanner
                     Asignar schooledFamilyStudent  := truthMachine(scholedFamily)               
 
 
@@ -75,6 +76,7 @@ Internet. Cada niño que se inscribe tiene un número de puntos en función de a
                     Sumar enrolledStudentScore + schooledFamilyStudent
             
             Mostrar en el terminal la puntuación obtenida
+                Escribir "Nº registro: registerStudentNumber"
                 Escribir "Gracias por responder a las preguntas. Tu puntuación obtenida es: enrolledStudentScore"
        
              Fin algoritmo
@@ -91,40 +93,57 @@ ___
 
     Inicio algoritmo piscina
 
-    Declarar método calcArea(float width, float large)
-        Devuelve cálculo de área
-    Declarar método calcVolume(float area, float deep)
-        Devuelve cálculo de volumen
+    //Declarar funciones
+    function
+        calcArea(float width, float large)
+            Devuelve width * large
+    Ffunction
+    function calcVolume(float area, float deep)
+        Devuelve area * deep
+    Ffunction
 
-    Declarar y asignar
+    function checkEntry (Scanner data)
+        var
+            aproved : double
+        fvar
+        Si data Enconces
+            aprobed = data
+        Sino
+            Escribir "Invalid entry-Please write a floating point number"
+        Devuelve aproved
+    Ffunction
+    //Fin declarar funciones
+
+    //Declarar y asignar
         cons
             largePols := float 300
         fcons
         var
-            widthInput, deepInput, widthPoolA, widthPoolB, deepPoolA, deepPoolB : float
+            widthPoolA, widthPoolB, deepPoolA, deepPoolB : float
             resultAreaPools, resultVolumePool, resultValuesBothPools, resultAreaBothPools , resultVolumeBothPools,  resultValuesChangedPools: String
+            scanner : Scanner
         fvar
     
-    Solicitar datos usuario
+    //Solicitar datos usuario
         Escribir"El programa te solicitara el ancho y profundo de las piscinas. Solo admite decimales"
     
         Escribir "Introduce el ancho de la piscina A"
-        Leer widthInput
-        Asignar widthPoolA := widthInput
+        Leer scanner
+        Asignar widthPoolA := checkEntry(scanner)
         
         Escribir "Introduce el ancho de la piscina B"
-        Leer widthInput
-        Asignar widtPoolB := widthInput
+        Leer scanner
+        Asignar widtPoolB := checkEntry(scanner)
         
         Escribir "Introduce la profundidad de la piscina A"
-        Leer deepInput 
-        Asignar deepPoolA := deepInput
+        Leer scanner 
+        Asignar deepPoolA := checkEntry(scanner)
         
         Escribir "Introduce la profundidad de la piscina B"
-        Leer deepInput
-        Asignar deepPoolB := deepInput
+        Leer scanner
+        Asignar deepPoolB := checkEntry(scanner)
 
-    Asignación valores: area, volumen, dimensiones de las piscinas y sus variantes
+    //Asignación valores: area, volumen, dimensiones de las piscinas y sus variantes
         areaPoolA := calcArea 
         areaPoolB :=  calcArea
         volumePoolA := calVolume
@@ -136,7 +155,7 @@ ___
         volumeChangedPoolB := calcVolume  
 
 
-    Mostrar en terminal  
+    //Mostrar en terminal  
         resultAreaPools := String "El área total de la piscina A es:  m², y de la piscina B es:  m².\n"
         resultVolumePools := String "El volumen total de la piscina A es:  m³, y de la piscina B es:  m³.\n"
         resultValuesBothPools := String "El ancho de las piscinas juntas es:  m, y el largo es:  m.\n"

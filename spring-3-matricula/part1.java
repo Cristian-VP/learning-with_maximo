@@ -1,17 +1,28 @@
+import java.util.Scanner;
 public class part1 {
-    public static void main(String[] args) {
         //Declaración de métodos.
-        public static int  calcArea(double width, double large){
-            double area = width * large;
-            return (int) area;
-        }
+    static int  calcArea(double width, double large){
+        double area = width * large;
+        return (int) area;
+    }
 
-        public static int calcVolume(double area, double deep){
-            double volume = area*deep;
-            return (int) volume;
+    public static int calcVolume(double area, double deep){
+        double volume = area*deep;
+        return (int) volume;
 
+    }
+
+    static double checkEntry (Scanner data){
+        double confirmed = 0;
+        if(data.hasNextDouble()){
+            confirmed = data.nextDouble();
+        }else{
+            System.out.println("Invalid entry-Please write a floating point number");
+            System.exit(0);
         }
-        //Fin de métodos.
+        return confirmed;
+    }
+    //Fin de métodos.
 
         public static void main(String[] args) {
 
@@ -19,20 +30,19 @@ public class part1 {
             final int largePols = 300;
             //Variables
             double widthPoolA, widthPoolB, deepPoolB, deepPoolA;
-            Scanner widthInput = new Scanner(System.in);
-            Scanner deepInput = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
             String resultTaskAreaPools, resultTaskVolumePools, resultTaskValuesBothPools, resultTaskAreaBothPools, resultTaskVolumeBothPools, resultTaskValuesChangedPools;
 
             //Solicitar datos usuario
             System.out.println("El programa te solicitara el ancho y profundo de las piscinas. Solo admite decimales.");
             System.out.println("Introduce el ancho de la piscina A");
-            widthPoolA = widthInput.nextDouble();
+            widthPoolA = checkEntry(scanner);
             System.out.println("Introduce el ancho de la piscina B");
-            widthPoolB = widthInput.nextDouble();
+            widthPoolB = checkEntry(scanner);
             System.out.println("Introduce la profundidad de la piscina A");
-            deepPoolA = deepInput.nextDouble();
+            deepPoolA = checkEntry(scanner);
             System.out.println("Introduce la profundidad de la piscina B");
-            deepPoolB = deepInput.nextDouble();
+            deepPoolB = checkEntry(scanner);
 
 
 
