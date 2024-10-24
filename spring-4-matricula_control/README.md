@@ -11,17 +11,41 @@ Internet. Cada niño que se inscribe tiene un número de puntos en función de a
 
         Inicio algoritmo innscripción alumno
 
-            //Declarar método 
-            truthMachine(string)
-            Si string  Entonces
-                devolver true 
-            Sino
-                devolver false
+            //Declarar métodos 
+            function truthMachine(answer: String) : boolean 
+                correct :boolean
+                correct := false
+                Si string  Entonces
+                    correct = true 
+                Sino
+                    Escribir "Invalid entry-Please write a integer number between 1 and 499."
+                    Finalizar algoritmo
+                devolver coorect 
+            ffunction
+            
+            function checkRegisterNumber(data : Scanner) : int
+                toComfirmed, comfirmed : int
+                toConfirmed := 0
+                confirmed := 0
+
+                Si data == integer Entonces
+                    leer teclado(toConfirmed)
+                Sino 
+                    Escribir "Invalid entry-Please write a integer number."
+                    Finalizar algoritmo
+                
+                Si toComfirmed >= 1 && to confirmed <= 499 Entonces
+                    confirmed = toComfirmed
+                Sino
+                    Escribir "Invalid entry-Please write a integer number between 1 and 499."
+                    Finalizar programa
+
+                Devolver confirmed
+            ffunction
 
             //Declarar variables y constantes
             
             var
-                random : Random
                 scanner : Scanner
                 registerStudentNumber, enrolledStudentScore : int
                 brotherStudent, homeStudent, parentsWorksStudent, conditionStudent, familyStudent, schooledFamilyStudent : boolean
@@ -37,28 +61,25 @@ Internet. Cada niño que se inscribe tiene un número de puntos en función de a
             fconst
 
             Preguntar datos del usuario, por cada respuesta asignar valor
+                Escribir "Estas a punto de realizar tu matrícula. Necesitamos tu nº de registro"
+                Escribir "Introduce un numero natural entre 1 a 499"
+                    Asignar registerStudentNumber := checkRegisterNumber(Leer scanner)
                 Escribir "Para poder asignarte una valoración en tu matricula. Debes responder a las siguiente preguntas.
                  Responde unicamente sí o no."
                 Escribir "¿Tienes uno o más hermanos/as/es en el centro?"
-                    Leer scanner
-                    Asignar brotherStudent  :=  truthMachine(brothers)
+                    Asignar brotherStudent  :=  truthMachine(Leer scanner)
                 Escribir "¿Tu residencia esta en la misma localidad que el centro?"
-                    Leer scanner
-                    Asignar homeStudent  := truthMachine(homeLocation)
+                    Asignar homeStudent  := truthMachine(Leer scanner)
                 Escribir "¿Tus padres trabajan en la misma localidad?"
-                    Leer scanner
-                    Asignar parentsWorksStudent  := truthMachine(parentsWorks)
+                    Asignar parentsWorksStudent  := truthMachine(Leer scanner)
                 Escribir "Te encuentras en alguna de estas dos situaciones: 
                             - Grado discapacidad mayor o igual 33%
                             - Enfermedad crónica "
-                    Leer 
-                    Asignar conditionStudent  := truthMachine(conditioner)
+                    Asignar conditionStudent  := truthMachine(Leer scanner)
                 Escribir "¿Tienes padres o hermanos?"
-                    Leer scanner
-                    Asignar familyStudent  := truthMachine(membersFamily)
-                Escribir "¿Algun miembro de tu familia a estudiado en el centro?"
-                    Leer scanner
-                    Asignar schooledFamilyStudent  := truthMachine(scholedFamily)               
+                    Asignar familyStudent  := truthMachine(Leer scanner)
+                Escribir "¿Algun miembro de tu familia es un ex-alumno del centro?"
+                    Asignar schooledFamilyStudent  := truthMachine(Leer scanner)               
 
 
             Analizar datos usuario y asignar puntuación
