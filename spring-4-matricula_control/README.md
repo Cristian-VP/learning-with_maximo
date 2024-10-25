@@ -1,4 +1,4 @@
-# Sprint 3 → Parte 2
+# Sprint 4 ~ Sprint 3 - part 2
 
 ## Algoritmo inscripción alumno
 
