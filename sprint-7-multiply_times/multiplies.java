@@ -20,8 +20,9 @@ public class multiplies {
         System.out.println("Hola intoduce un numero entre 1 - 20 por favor:");
         do{
             limitNumber = validator(scanner);
-        }
-        while (validator(scanner) == null);
+        }while(limitNumber == null);
+
+
 
         for(int i = 0; i <= limitNumber; i++){
             System.out.println(multiplyTimes = i*limitNumber);
