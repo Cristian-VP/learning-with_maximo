@@ -1,9 +1,10 @@
+package sprint;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
 public class user_shop {
-    // métodos que serán utilizados para comprobar si el dato del usuario es válido o si introduce algo que no sea nuemros
+    // métodos que serán utilizados para comprobar si el dato del usuario es válido o si introduce algo que no sea numeros
         public static Integer checkID(Scanner  input){
             try {
                 int id = input.nextInt();
@@ -64,28 +65,28 @@ public class user_shop {
             errorRegister = true ;
             System.out.println("Error! Entrada de dato inválida. Solo se aceptan numeros naturales de 111 a 999 (incluidos).");
             throw new Exception("Programa finalizado");
-        }else if(!errorRegister){
+        }else{
             System.out.print("Ingresa tu edad: ");
             age = checkAge(scanner);
             if(age == null){
                 errorRegister = true ;
                 System.out.println("Error! Entrada de dato inválida. Solo se aceptan numeros naturales de 14 a 120 (incluidos).");
                 throw new Exception("Programa finalizado");
-            }else if(!errorRegister){
+            }else{
                 System.out.println("Ingresa el número correspondiente al tipo de venta: \n Venta libre (0) \n Pensionista (1) \n Carnet Jove (2) \n Socio (3)");
                 kind = checkKind(scanner);
                 if(kind == null){
                     errorRegister = true ;
                     System.out.println("Error! Entrada de dato inválida. Solo se aceptan números naturales de 0 a 3 (incluidos).");
                     throw new Exception("Programa finalizado");
-                }else if(!errorRegister){
+                }else {
                     System.out.print("Ingresa el importe de la compra: ");
                     total = checkTotal(scanner);
                     if(total == null){
                         errorRegister = true ;
                         System.out.println("Error! Entrada de dato inválida. Solo se aceptan números naturales de 0 a 1000 (incluidos).");
                         throw new Exception("Programa finalizado");
-                    }else if(!errorRegister){
+                    }else{
                         System.out.print("Ingresa tu teléfono sin el prefijo: ");
                         phone = checkPhone(scanner);
                         if(phone == null){
