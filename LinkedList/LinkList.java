@@ -9,7 +9,7 @@ class Node {
 
 
 public class LinkList {
-    static Node head;
+    Node head;
 
     public LinkList() {
         head = null;
@@ -92,21 +92,46 @@ public class LinkList {
         return specificNode(0);
     }
 
+    public Node eatAnotherLinkedList(LinkList victimList) {
+        Node myCurrent = this.head;
+        if(victimList.getHead() == null && myCurrent == null) return null;
+        if (victimList.getHead() == null) return myCurrent;
+        if (myCurrent == null) return victimList.getHead();
+
+        while (myCurrent.next != null) {
+            myCurrent = myCurrent.next;
+        }
+        myCurrent.next = victimList.getHead();
+
+        return myCurrent;
+    }
 
 
     public static void main (String[] args){
         LinkList list = new LinkList();
-        LinkList list2 = new LinkList();
+        LinkList victima = new LinkList();
+
 
         list.addNewNode(1);
         list.addNewNode(2);
         list.addNewNode(3);
-        list2.addNewNode(4);
-        list2.addNewNode(5);
-        list2.addNewNode(6);
+        list.addNewNode(4);
+        list.addNewNode(5);
+        list.addNewNode(6);
 
-        LinkListTool.eatAnotherLinkedList(list2, list);
         list.printList();
+        System.out.println();
+
+        victima.addNewNode(7);
+        victima.addNewNode(8);
+        victima.addNewNode(9);
+
+        victima.printList();
+        System.out.println();
+
+        list.eatAnotherLinkedList(victima);
+        list.printList();
+
     }
 }
 
