@@ -106,6 +106,20 @@ public class LinkList {
         return myCurrent;
     }
 
+    public int count(int data){
+      int occurences = 0;
+      Node current = this.head;
+      if(current == null) return 0;
+
+      while(current.next != null){
+          System.out.println("Me ejecuto");
+          if(current.data == data){
+                occurences++;
+          }
+          current = current.next;
+      }
+        return occurences;
+    }
 
     public static void main (String[] args){
         LinkList list = new LinkList();
@@ -113,10 +127,14 @@ public class LinkList {
 
 
         list.addNewNode(1);
+        list.addNewNode(1);
         list.addNewNode(2);
         list.addNewNode(3);
         list.addNewNode(4);
         list.addNewNode(5);
+        list.addNewNode(5);
+        list.addNewNode(5);
+        list.addNewNode(6);
         list.addNewNode(6);
 
         list.printList();
@@ -131,6 +149,9 @@ public class LinkList {
 
         list.eatAnotherLinkedList(victima);
         list.printList();
+
+        list.count(1);
+        System.out.println(list.count(400));
 
     }
 }
