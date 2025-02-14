@@ -36,11 +36,11 @@ public class LinkList {
     }
 
     public Node specificNode(int position){
-        Node current = head;
-        if(head == null) return null;
-        if(position == 0) return head;
         if(position > size() || position < 0) return null;
+        if(position == 0) return head;
+        Node current = head;
         for(int i = 0; i < position; i++){
+            if(current == null) return null;
             current = current.next;
         }
         return current;
@@ -70,6 +70,11 @@ public class LinkList {
 
     public void insertNode(int position, int data){
         Node newNode = new Node(data);
+        if(head == null){
+            head = newNode;
+            return;
+        }
+
         if(position == 0){
             newNode.next = head;
             head = newNode;
@@ -120,6 +125,30 @@ public class LinkList {
       }
         return occurences;
     }
+
+    /*Implementar en java el método Sorted Insertion que tengo en javascript tiene que devolver head*/
+    /*function sortedInsert(head, data) {
+  let newNode = new Node(data);
+  if(head === null){
+    head = newNode;
+    return head;
+  }
+
+  let current = head;
+
+  while(current !== null){
+    if(data < current.data){
+      current = push(head, data);
+      return current;
+    }else if(current.next === null || data < current.next.data){
+      newNode.next = current.next;
+      current.next  = newNode;
+      return head;
+    }
+    current = current.next;
+  }
+  return head;
+}*/
 
     public static void main (String[] args){
         LinkList list = new LinkList();
